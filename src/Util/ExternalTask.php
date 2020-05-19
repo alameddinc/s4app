@@ -15,6 +15,7 @@ class ExternalTask
 {
     protected $url;
     protected $response;
+    protected $mappingArray;
 
     protected function __construct($url)
     {

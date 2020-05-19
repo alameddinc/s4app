@@ -11,9 +11,6 @@ namespace App\Util;
 
 class FirstTasks extends ExternalTask implements TaskInterface
 {
-    protected $url;
-    protected $mappingArray;
-
     public function __construct()
     {
         $this->url = 'http://www.mocky.io/v2/5d47f24c330000623fa3ebfa';
@@ -39,7 +36,7 @@ class FirstTasks extends ExternalTask implements TaskInterface
             foreach ($value as $subKey => $subValue) {
                 $tempArray[$this->mappingArray[$subKey]] = $subValue;
             }
-            array_push($responseArray,$tempArray);
+            array_push($responseArray, $tempArray);
         }
         $this->response = $responseArray;
         return $this;
