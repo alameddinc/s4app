@@ -37,11 +37,18 @@ class Task
         return $this->id;
     }
 
+    /**
+     * @return null|string
+     */
     public function getTitle(): ?string
     {
         return $this->title;
     }
 
+    /**
+     * @param string $title
+     * @return Task
+     */
     public function setTitle(string $title): self
     {
         $this->title = $title;
@@ -49,11 +56,18 @@ class Task
         return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getLevel(): ?int
     {
         return $this->level;
     }
 
+    /**
+     * @param int $level
+     * @return Task
+     */
     public function setLevel(int $level): self
     {
         $this->level = $level;
@@ -61,11 +75,18 @@ class Task
         return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getDuration(): ?int
     {
         return $this->duration;
     }
 
+    /**
+     * @param int $duration
+     * @return Task
+     */
     public function setDuration(int $duration): self
     {
         $this->duration = $duration;

@@ -34,7 +34,7 @@ class SecondTasks extends ExternalTask implements TaskInterface
             foreach (array_values($item)[0] as $key => $value) {
                 $tempArray[$this->mappingArray[$key]] = $value;
             }
-            $tempArray['id'] = key($item);
+            $tempArray['title'] = key($item);
             array_push($responseArray, $tempArray);
         }
         $this->response = $responseArray;

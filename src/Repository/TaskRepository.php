@@ -47,4 +47,13 @@ class TaskRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function cleanUp(){
+        return $this->createQueryBuilder('t')
+            ->delete()
+            ->where('1')
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
 }

@@ -32,11 +32,18 @@ class Developer
         return $this->id;
     }
 
+    /**
+     * @return null|string
+     */
     public function getFullName(): ?string
     {
         return $this->fullName;
     }
 
+    /**
+     * @param string $fullName
+     * @return Developer
+     */
     public function setFullName(string $fullName): self
     {
         $this->fullName = $fullName;
@@ -44,11 +51,18 @@ class Developer
         return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getLevel(): ?int
     {
         return $this->level;
     }
 
+    /**
+     * @param int $level
+     * @return Developer
+     */
     public function setLevel(int $level): self
     {
         $this->level = $level;
