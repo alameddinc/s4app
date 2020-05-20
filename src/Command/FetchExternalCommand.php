@@ -5,7 +5,6 @@ namespace App\Command;
 use App\Service\TaskService;
 use App\Util\FirstTasks;
 use App\Util\SecondTasks;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Output\OutputInterface;

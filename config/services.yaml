@@ -29,3 +29,7 @@ services:
         class: App\Service\TaskService
         arguments:
             $em: "@doctrine.orm.entity_manager"
+    assignService:
+        class: App\Service\AssignService
+        arguments:
+            $em: "@doctrine.orm.entity_manager"

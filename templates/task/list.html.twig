@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <td>Tasks</td>
+        <td>Level</td>
+        <td>Time</td>
+    </tr>
+    {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.level }}</td>
+            <td>{{ task.duration }}</td>
+            <td>{{ task.level * task.duration }}</td>
+        </tr>
+    {% endfor %}
+</table>
