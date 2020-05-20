@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TaskController extends AbstractController
 {
     /**
-     * @Route("/task", name="task")
+     * @Route("/tasks_information", name="task")
      * @return Response
      */
     public function index()
