@@ -4,7 +4,6 @@ namespace App\Controller;
 
 
 use App\Entity\Developer;
-use App\Service\AssignService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,29 +14,13 @@ class TaskController extends AbstractController
      * @Route("/task", name="task")
      * @return Response
      */
-    public function index(AssignService $assignService)
+    public function index()
     {
-        /*
-         $entityManager = $this->getDoctrine()->getManager();
-        $developerNames = [
-            'Ali',
-            'Ayşe',
-            'Kemal',
-            'Cengiz',
-            'Alameddin',
-        ];
-        for ($i = 1; $i<=5; $i++){
-          $dev  = new Developer();
-          $dev->setFullName($developerNames[$i-1]);
-          $dev->setLevel($i);
-          $entityManager->persist($dev);
-        }
+        $developers = $this->getDoctrine()->getManager()->getRepository(Developer::class);
+        return $this->render('task/list.html.twig', [
+            'summaries' => $developers->sumAllTaskDurations(),
+            'developers' => $developers->findAll()
+        ]);
 
-        $entityManager->flush();
-        $entityManager->clear();
-
-        return new Response("Done");
-        */
-        dd($assignService->computeOptimization());
     }
 }

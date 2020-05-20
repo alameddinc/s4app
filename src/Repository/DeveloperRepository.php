@@ -47,4 +47,14 @@ class DeveloperRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function sumAllTaskDurations()
+    {
+        return $this->createQueryBuilder('d')
+            ->select('d.id as id, d.fullName as fullName, d.level as level, sum(a.duration) as totalDuration')
+            ->innerJoin('d.assignedTasks', 'a')
+            ->groupBy('a.developer')
+            ->getQuery()
+            ->getResult();
+    }
 }

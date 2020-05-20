@@ -51,6 +51,7 @@ class FetchExternalCommand extends Command
                 break;
         }
         $this->taskService->createWithExternal($tasks);
+        $io->success('Task saved to Database');
         return 0;
     }
 

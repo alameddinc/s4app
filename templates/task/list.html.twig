@@ -1,15 +1,16 @@
-<table>
-    <tr>
-        <td>Tasks</td>
-        <td>Level</td>
-        <td>Time</td>
-    </tr>
-    {% for task in tasks %}
-        <tr>
-            <td>{{ task.title }}</td>
-            <td>{{ task.level }}</td>
-            <td>{{ task.duration }}</td>
-            <td>{{ task.level * task.duration }}</td>
-        </tr>
-    {% endfor %}
-</table>
+<h4>Genel Özet</h4>
+{% for summary in summaries %}
+    <p><b>{{ summary.fullName }}</b> (Geliştirici Zorluk Seviyesi: {{ summary.level }}) tüm görevlerini {{ (summary.totalDuration / 45)|round(0,'ceil') }} hafta sonra bitirecektir. || Toplam Saat dağılımı : {{ summary.totalDuration|round(4) }}'dir.</p>
+{% endfor %}
+<hr>
+<hr>
+<h4> Geliştiricilere Aktarılmış Görevler</h4>
+{% for developer in developers %}
+    <p>{{ developer.getFullName }}</p>
+    <ul>
+        {% for assigned in developer.getAssignedTasks() %}
+            <li>{{ assigned.getTask().getTitle() }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endfor %}
